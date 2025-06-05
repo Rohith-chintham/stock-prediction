@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Prediction for <span style="color:#007bff">{{ ticker }}</span></h1>
+
+        <ul style="list-style-type: none; padding: 0;">
+            {% for date, price in predictions %}
+                <li style="margin: 8px 0;">
+                    <strong>{{ date.strftime('%Y-%m-%d') }}</strong> → 
+                    <span style="color: green;">${{ '%.2f'|format(price) }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <br>
+        <a href="/" style="text-decoration: none;">
+            <button>🔙 Predict Another</button>
+        </a>
+    </div>
+</body>
+</html>

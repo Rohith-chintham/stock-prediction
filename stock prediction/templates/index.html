@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📈 Stock Price Predictor</h1>
+        <form method="POST">
+            <input type="text" name="ticker" placeholder="Enter Stock Symbol (e.g., AAPL, GOOGL)" required>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
